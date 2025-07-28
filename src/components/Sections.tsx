@@ -3,12 +3,13 @@ import React from 'react'
 import InstructorsSection from './InstructorsSection';
 import LaidOut from './LaidOut';
 import WhatWillLearn from './WhatWillLearn';
+import CourseAbout from './CourseAbout';
+import ExclusiveFeatures from './ExclusiveFeatures';
 interface SectionProps {
   lang: 'en' | 'bn';
 }
 export default async function Sections({ lang }: SectionProps) {
     const courseData = await fetchCourseData(lang);
-    console.log(courseData.data.sections)
   return (
      <div className='max-w-6xl mx-auto'>
         <div className='w-[60%] mt-10'>
@@ -20,6 +21,10 @@ export default async function Sections({ lang }: SectionProps) {
             return <LaidOut key={idx} data={section}/>
           case 'pointers':
             return <WhatWillLearn key={idx} data={section}/>
+          case 'about':
+            return <CourseAbout key={idx} data={section}/>
+          case 'feature_explanations':
+            return <ExclusiveFeatures key={idx} data={section}/>
           default:
             return null;
         }

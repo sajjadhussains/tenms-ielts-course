@@ -75,6 +75,8 @@ export type SectionTypes={
         subtitle?:string;
         title?:string;
         text?:string;
+        checklist?:string[];
+        file_url:string;
       }>;
 }
 export async function fetchCourseData(lang: 'en' | 'bn' = 'en'): Promise<CourseData> {
@@ -87,7 +89,7 @@ export async function fetchCourseData(lang: 'en' | 'bn' = 'en'): Promise<CourseD
         'accept': 'application/json',
       },
       // This tells Next.js how to cache the data. Revalidate every hour.
-      next: { revalidate: 3600 },
+      // next: { revalidate: 3600 },
     }
   );
 

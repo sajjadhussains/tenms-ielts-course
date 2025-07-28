@@ -18,5 +18,3 @@ export default function ProductPage({ searchParams }: ProductPageProps) {
     </main>
   );
 }
-
-//  <div dangerouslySetInnerHTML={{ __html: courseData.data.description }} />

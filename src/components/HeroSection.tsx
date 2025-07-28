@@ -12,7 +12,6 @@ interface HeroSectionProps {
 // ✅ Accept props correctly
 export default async function HeroSection({ lang }: HeroSectionProps) {
   const courseData = await fetchCourseData(lang);
-  console.log(courseData)
 
   return (
     <div>
