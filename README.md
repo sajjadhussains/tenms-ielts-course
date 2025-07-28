@@ -2,8 +2,32 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### Option 1: Run with Docker (Recommended)
 
+#### Production Build
+```bash
+# Build and run with docker-compose
+docker-compose up --build
+
+# Or build and run manually
+docker build -t tenms-ielts-course .
+docker run -p 3000:3000 tenms-ielts-course
+```
+
+#### Development Mode
+```bash
+# Run development server with Docker
+docker-compose --profile dev up --build
+```
+
+### Option 2: Run Locally
+
+First, install dependencies:
+```bash
+npm install
+```
+
+Then run the development server:
 ```bash
 npm run dev
 # or
@@ -34,3 +58,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# tenms-ielts-course
