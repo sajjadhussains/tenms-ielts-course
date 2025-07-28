@@ -3,7 +3,6 @@ import { CourseData, fetchCourseData } from '@/services/api';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
-import HeroCarouselBottom from './HeroCarouselBottom';
 
 interface HeroCarouselProps {
   lang: 'en' | 'bn';
@@ -193,8 +192,6 @@ export default function HeroCarousel({ lang }: HeroCarouselProps) {
           ))}
         </div>
       )}
-      
-     {/* <HeroCarouselBottom lang={lang}/> */}
     </div>
   )
 }
