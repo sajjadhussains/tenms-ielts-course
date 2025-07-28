@@ -30,18 +30,23 @@ export interface CourseData {
       list_page_visibility: boolean;
       text: string;
     }>;
-    sections: Array<{
-      type: string;
-      name: string;
-      description: string;
-      bg_color: string;
-      order_idx: number;
-      values: Array<{
-        description: string;
-        image: string;
-        name: string;
-      }>;
-    }>;
+    // sections: Array<{
+    //   type: string;
+    //   name: string;
+    //   description: string;
+    //   bg_color: string;
+    //   order_idx: number;
+    //   values: Array<{
+    //     description?: string;
+    //     image?: string;
+    //     name?: string;
+    //     icon?:string;
+    //     id?:string;
+    //     subtitle?:string;
+    //     title?:string;
+    //   }>;
+    // }>;
+    sections:SectionTypes[];
     cta_text:{
     name:string;
     value:string;
@@ -54,7 +59,24 @@ export interface CourseData {
   status_code: number;
   
 }
-
+export type SectionTypes={
+  
+      type: string;
+      name: string;
+      description: string;
+      bg_color: string;
+      order_idx: number;
+      values: Array<{
+        description?: string;
+        image?: string;
+        name?: string;
+        icon?:string;
+        id?:string;
+        subtitle?:string;
+        title?:string;
+        text?:string;
+      }>;
+}
 export async function fetchCourseData(lang: 'en' | 'bn' = 'en'): Promise<CourseData> {
   const res = await fetch(
     `https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course?lang=${lang}`,

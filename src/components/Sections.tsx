@@ -1,6 +1,8 @@
 import { fetchCourseData } from '@/services/api';
 import React from 'react'
 import InstructorsSection from './InstructorsSection';
+import LaidOut from './LaidOut';
+import WhatWillLearn from './WhatWillLearn';
 interface SectionProps {
   lang: 'en' | 'bn';
 }
@@ -14,7 +16,10 @@ export default async function Sections({ lang }: SectionProps) {
         switch (section.type) {
           case 'instructors':
             return <InstructorsSection key={idx} data={section} />;
-          
+          case 'features':
+            return <LaidOut key={idx} data={section}/>
+          case 'pointers':
+            return <WhatWillLearn key={idx} data={section}/>
           default:
             return null;
         }
